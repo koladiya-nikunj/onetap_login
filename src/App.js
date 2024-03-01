@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useGoogleOneTapLogin } from "react-google-one-tap-login"
 
 function App() {
+
+  useGoogleOneTapLogin({
+    onSuccess: (response) => console.log(response),
+    onError: (error) => console.log(error),
+    googleAccountConfigs: {
+      client_id: "1027485564712-nm6m9eifqopa3eqq2pnmj83vljb0e74c.apps.googleusercontent.com"
+    }
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+
+
     </div>
   );
 }
