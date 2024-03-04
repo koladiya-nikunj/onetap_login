@@ -1,20 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useGoogleOneTapLogin } from "react-google-one-tap-login"
-import { useScreenshot } from "use-react-screenshot";
 
 function App() {
   const ref = useRef(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [showPopup, setShowPopup] = useState(true);
-  const [error] = useScreenshot({
-    type: "image/jpeg",
-    quality: 1.0,
-  });
-
-  if (error) {
-    console.error("Error occurred during screenshot capture:", error);
-  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -46,7 +37,7 @@ function App() {
   return (
     <div style={{ width: '100%', textAlign: "center", }} ref={ref} className="app">
       {email && (
-        <h1 style={{marginTop:'25%'}}>
+        <h1 style={{marginTop:'20%'}}>
           Dear user {name} you are successfully verify with
           <br />
           {email}
